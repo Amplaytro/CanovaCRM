@@ -1,0 +1,21 @@
+name,email,phone,source,date,location,language,status,type
+Rahul Sharma,rahul.sharma@example.com,9876543210,Website,2026-04-01,Mumbai,hindi,ongoing,warm
+Priya Menon,priya.menon@example.com,9823456781,Referral,2026-04-05,Bangalore,kannada,ongoing,warm
+Aditya Kulkarni,aditya.kulkarni@example.com,9812345670,Social Media,2026-04-10,Pune,marathi,ongoing,warm
+Sneha Das,sneha.das@example.com,9901234567,Cold Call,2026-04-15,Kolkata,bengali,ongoing,warm
+Rohan Verma,rohan.verma@example.com,9745678901,Email Campaign,2026-04-20,Delhi,hindi,ongoing,warm
+Kavya Nair,kavya.nair@example.com,9867890123,Website,2026-04-02,Kochi,kannada,ongoing,warm
+Arjun Patel,arjun.patel@example.com,9834561230,Referral,2026-04-06,Ahmedabad,hindi,ongoing,warm
+Meera Joshi,meera.joshi@example.com,9890123456,Social Media,2026-04-11,Pune,marathi,ongoing,warm
+Vikram Singh,vikram.singh@example.com,9778901234,Cold Call,2026-04-14,Chandigarh,hindi,ongoing,warm
+Ananya Bose,ananya.bose@example.com,9712345678,Email Campaign,2026-04-18,Kolkata,bengali,ongoing,warm
+Nikhil Rao,nikhil.rao@example.com,9654321987,Website,2026-04-03,Hyderabad,kannada,ongoing,warm
+Simran Kaur,simran.kaur@example.com,9887654321,Referral,2026-04-07,Amritsar,hindi,ongoing,warm
+Tejas Desai,tejas.desai@example.com,9765432198,Social Media,2026-04-12,Surat,marathi,ongoing,warm
+Pooja Chatterjee,pooja.chatterjee@example.com,9643219876,Cold Call,2026-04-16,Kolkata,bengali,ongoing,warm
+Aman Gupta,aman.gupta@example.com,9532198765,Email Campaign,2026-04-21,Delhi,hindi,ongoing,warm
+Divya Pillai,divya.pillai@example.com,9821987654,Website,2026-04-04,Trivandrum,kannada,ongoing,warm
+Siddharth More,siddharth.more@example.com,9798765432,Referral,2026-04-08,Nashik,marathi,ongoing,warm
+Riya Ghosh,riya.ghosh@example.com,9676543219,Social Media,2026-04-13,Bhubaneswar,bengali,ongoing,warm
+Karan Mehta,karan.mehta@example.com,9565432187,Cold Call,2026-04-17,Jaipur,hindi,ongoing,warm
+Lavanya Subramaniam,lavanya.subramaniam@example.com,9454321876,Email Campaign,2026-04-22,Chennai,kannada,ongoing,warm

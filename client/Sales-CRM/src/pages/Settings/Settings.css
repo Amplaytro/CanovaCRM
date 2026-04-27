@@ -1,0 +1,200 @@
+.settings-page {
+  position: relative;
+  width: 1200px;
+  height: 1024px;
+  padding: 0;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.settings-navbar {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 1200px;
+  height: 108px;
+  background: #ffffff;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.settings-search-shell {
+  position: absolute;
+  left: 36px;
+  top: 32px;
+  width: 388px;
+  height: 44px;
+  border-radius: 16px;
+  background: #ececec;
+}
+
+.settings-search-shell input {
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px 10px 63px;
+  color: #636060;
+  font-family: 'REM', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.08px;
+}
+
+.settings-search-shell input::placeholder {
+  color: #636060;
+}
+
+.settings-search-icon {
+  position: absolute;
+  left: 22px;
+  top: 6px;
+  width: 32px;
+  height: 32px;
+  color: #636060;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.settings-breadcrumb {
+  position: absolute;
+  left: 36px;
+  top: 126px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #636060;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.settings-card {
+  position: absolute;
+  left: 36px;
+  top: 186px;
+  width: 1140px;
+  height: 772px;
+  border: 1px solid #b1b1b1;
+  border-radius: 16px;
+  background: #ffffff;
+  padding: 38px 24px 24px;
+}
+
+.settings-tab-header {
+  margin-left: 0;
+}
+
+.settings-tab {
+  color: #747474;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.settings-tab.active {
+  display: inline-block;
+  padding-bottom: 6px;
+  border-bottom: 3px solid #747474;
+}
+
+.settings-divider {
+  width: 100%;
+  height: 1px;
+  margin: 0 0 24px;
+  background: #b1b1b1;
+}
+
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18.84px;
+  width: 554px;
+  margin-left: 2.73px;
+}
+
+.settings-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3.75px;
+}
+
+.settings-field label {
+  color: #5e5e5e;
+  font-family: 'Poppins', sans-serif;
+  font-size: 17.282px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.settings-field input {
+  width: 500.31px;
+  height: 52.47px;
+  padding: 0 16px;
+  border: 0.94px solid #3e3e3e;
+  border-radius: 11.24px;
+  background: #ffffff;
+  color: #303030;
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.settings-field input::placeholder {
+  color: #303030;
+}
+
+.settings-success,
+.settings-error {
+  width: 500.31px;
+  padding: 10px 14px;
+  border-radius: 11.24px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.settings-success {
+  background: #ecfdf3;
+  color: #027a48;
+}
+
+.settings-error {
+  background: #fef3f2;
+  color: #b42318;
+}
+
+.settings-form-footer {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+}
+
+.settings-save-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 143px;
+  height: 37px;
+  border-radius: 12px;
+  background: #d9d9d9;
+  color: #636060;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.settings-save-btn:disabled {
+  opacity: 0.65;
+}

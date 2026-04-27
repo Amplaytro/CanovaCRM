@@ -1,0 +1,19 @@
+{
+  "name": "final-evaluation-project",
+  "version": "1.0.0",
+  "description": "Sales CRM - Root Workspace",
+  "scripts": {
+    "server": "npm run dev --prefix server",
+    "client": "npm run dev --prefix client/Sales-CRM",
+    "employee": "npm run dev --prefix client/Employee-Portal",
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run employee\"",
+    "dev:employee": "concurrently \"npm run server\" \"npm run employee\"",
+    "build:client": "npm run build --prefix client/Sales-CRM",
+    "build:employee": "npm run build --prefix client/Employee-Portal",
+    "build": "npm run build:client && npm run build:employee",
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client/Sales-CRM && npm install --prefix client/Employee-Portal"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
