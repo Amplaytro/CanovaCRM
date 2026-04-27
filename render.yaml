@@ -16,17 +16,3 @@ services:
         sync: false
       - key: CLIENT_URL
         sync: false
-
-  - type: static
-    name: sales-crm-web
-    plan: free
-    rootDir: client/Sales-CRM
-    buildCommand: npm ci && npm run build
-    staticPublishPath: dist
-    envVars:
-      - key: VITE_API_URL
-        sync: false
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /index.html
