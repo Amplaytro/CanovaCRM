@@ -50,6 +50,23 @@ const resolvePreferredLanguage = (employee) => {
   return LANGUAGES.includes(normalizedLanguage) ? normalizedLanguage : 'english';
 };
 
+const getEmployeeSaveErrorMessage = (error, action) => {
+  const backendMessage = error.response?.data?.message;
+  if (backendMessage) {
+    return backendMessage;
+  }
+
+  if (error.response?.status) {
+    return `Error ${action} employee (status ${error.response.status})`;
+  }
+
+  if (error.request) {
+    return `Error ${action} employee: no response from API. Refresh the page and try again.`;
+  }
+
+  return `Error ${action} employee: ${error.message || 'unknown error'}`;
+};
+
 const Employees = () => {
   const [employees, setEmployees] = useState([]);
   const [page, setPage] = useState(1);
@@ -142,7 +159,7 @@ const Employees = () => {
       resetForm();
       fetchEmployees();
     } catch (error) {
-      alert(error.response?.data?.message || 'Error creating employee');
+      alert(getEmployeeSaveErrorMessage(error, 'creating'));
     }
   };
 
@@ -155,7 +172,7 @@ const Employees = () => {
       resetForm();
       fetchEmployees();
     } catch (error) {
-      alert(error.response?.data?.message || 'Error updating employee');
+      alert(getEmployeeSaveErrorMessage(error, 'updating'));
     }
   };
 
