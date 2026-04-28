@@ -27,7 +27,8 @@ const getRequestBody = async (req) => {
 export default async function handler(req, res) {
   const backendBaseUrl = normalizeApiBaseUrl(process.env.BACKEND_API_URL || process.env.VITE_API_URL);
   const incomingUrl = new URL(req.url, 'https://canova-crm-epft.vercel.app');
-  const backendPath = incomingUrl.pathname.replace(/^\/api\/?/, '');
+  const backendPath = (incomingUrl.searchParams.get('path') || '').replace(/^\/+/, '');
+  incomingUrl.searchParams.delete('path');
   const targetUrl = `${backendBaseUrl}/${backendPath}${incomingUrl.search}`;
 
   try {
