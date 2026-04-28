@@ -10,7 +10,7 @@ const shouldUseApiProxy = () => (
 );
 
 const apiBaseUrl = shouldUseApiProxy()
-  ? '/api'
+  ? 'https://canova-crm-three.vercel.app/api'
   : normalizeApiBaseUrl(import.meta.env.VITE_API_URL, '/api');
 
 const api = axios.create({

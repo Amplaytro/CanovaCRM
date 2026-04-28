@@ -24,7 +24,27 @@ const getRequestBody = async (req) => {
   return chunks.length > 0 ? Buffer.concat(chunks) : undefined;
 };
 
+const setCorsHeaders = (req, res) => {
+  const allowedOrigins = new Set([
+    'https://canova-crm-epft.vercel.app',
+    'https://canova-crm-three.vercel.app'
+  ]);
+  const origin = req.headers.origin;
+
+  res.setHeader('access-control-allow-origin', allowedOrigins.has(origin) ? origin : 'https://canova-crm-three.vercel.app');
+  res.setHeader('access-control-allow-methods', 'GET,POST,PUT,PATCH,DELETE,OPTIONS');
+  res.setHeader('access-control-allow-headers', 'authorization,content-type,accept');
+  res.setHeader('vary', 'Origin');
+};
+
 export default async function handler(req, res) {
+  setCorsHeaders(req, res);
+
+  if (req.method === 'OPTIONS') {
+    res.status(204).end();
+    return;
+  }
+
   const backendBaseUrl = normalizeApiBaseUrl(process.env.BACKEND_API_URL || process.env.VITE_API_URL);
   const incomingUrl = new URL(req.url, 'https://canova-crm-three.vercel.app');
   const backendPath = (incomingUrl.searchParams.get('path') || '').replace(/^\/+/, '');
