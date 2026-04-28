@@ -1,10 +1,6 @@
 {
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "https://sales-crm-api-h3nq.onrender.com/api/$1"
-    },
-    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
