@@ -29,7 +29,7 @@ Frontend:
 2. In Render, create a new Blueprint deploy from the repository.
 3. Render will read [`render.yaml`](./render.yaml).
 4. Set these values before applying:
-   - `CLIENT_URL=https://<your-frontend-domain>`
+   - `CLIENT_URL=https://<your-admin-frontend-domain>,https://<your-employee-frontend-domain>`
    - `VITE_API_URL=https://<your-backend-domain>/api`
    - your real `MONGODB_URI`
    - your real `JWT_SECRET`

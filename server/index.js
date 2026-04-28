@@ -16,6 +16,8 @@ const envOrigins = process.env.CLIENT_URL ? process.env.CLIENT_URL.split(',').ma
 
 const allowedOrigins = [
   ...envOrigins,
+  'https://canova-crm-epft.vercel.app',
+  'https://canova-crm-three.vercel.app',
   'http://localhost:5173',
   'http://127.0.0.1:5173',
   'http://localhost:5174',

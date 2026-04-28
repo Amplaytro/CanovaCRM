@@ -1,6 +1,11 @@
 import axios from 'axios';
 
-const apiBaseUrl = import.meta.env.VITE_API_URL?.trim() || 'http://localhost:5000/api';
+const normalizeApiBaseUrl = (value, fallback) => {
+  const baseUrl = (value?.trim() || fallback).replace(/\/+$/, '');
+  return /\/api(?:\/|$)/.test(baseUrl) ? baseUrl : `${baseUrl}/api`;
+};
+
+const apiBaseUrl = normalizeApiBaseUrl(import.meta.env.VITE_API_URL, 'http://localhost:5000/api');
 const TOKEN_KEY = 'employee-portal-token';
 const USER_KEY = 'employee-portal-user';
 
