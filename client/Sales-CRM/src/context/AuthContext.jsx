@@ -18,6 +18,14 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
+    window.addEventListener('canova-auth-cleared', logout);
+
+    return () => {
+      window.removeEventListener('canova-auth-cleared', logout);
+    };
+  }, [logout]);
+
+  useEffect(() => {
     let isActive = true;
 
     if (token) {

@@ -20,6 +20,12 @@ const api = axios.create({
   }
 });
 
+const clearStoredAuth = () => {
+  localStorage.removeItem('token');
+  localStorage.removeItem('user');
+  window.dispatchEvent(new Event('canova-auth-cleared'));
+};
+
 // Add auth token to requests
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
@@ -37,9 +43,7 @@ api.interceptors.response.use(
     const isAuthRequest = requestUrl.includes('/auth/login') || requestUrl.includes('/auth/me');
 
     if (error.response && error.response.status === 401 && !isAuthRequest) {
-      localStorage.removeItem('token');
-      localStorage.removeItem('user');
-      window.location.href = `${window.location.protocol}//${window.location.host}/`;
+      clearStoredAuth();
     }
     return Promise.reject(error);
   }
