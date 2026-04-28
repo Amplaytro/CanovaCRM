@@ -5,7 +5,13 @@ const normalizeApiBaseUrl = (value, fallback) => {
   return /\/api(?:\/|$)/.test(baseUrl) ? baseUrl : `${baseUrl}/api`;
 };
 
-const apiBaseUrl = normalizeApiBaseUrl(import.meta.env.VITE_API_URL, 'http://localhost:5000/api');
+const shouldUseApiProxy = () => (
+  typeof window !== 'undefined' && window.location.hostname.endsWith('.vercel.app')
+);
+
+const apiBaseUrl = shouldUseApiProxy()
+  ? '/api'
+  : normalizeApiBaseUrl(import.meta.env.VITE_API_URL, 'http://localhost:5000/api');
 const TOKEN_KEY = 'employee-portal-token';
 const USER_KEY = 'employee-portal-user';
 
