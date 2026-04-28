@@ -558,6 +558,15 @@ function LoginScreen() {
   const [password, setPassword] = useState('');
   const [submitting, setSubmitting] = useState(false);
 
+  function getAdminBridgeUrl() {
+    const isVercelDeployment = window.location.hostname.endsWith('.vercel.app');
+    const adminOrigin = isVercelDeployment
+      ? 'https://canova-crm-epft.vercel.app'
+      : `${window.location.protocol}//${window.location.hostname}:5173`;
+
+    return new URL('/auth-bridge', adminOrigin);
+  }
+
   async function handleSubmit(event) {
     event.preventDefault();
 
@@ -566,9 +575,7 @@ function LoginScreen() {
       const authData = await login(email, password);
 
       if (authData.role === 'admin') {
-        const bridgeUrl = new URL(
-          `${window.location.protocol}//${window.location.hostname}:5173/auth-bridge`
-        );
+        const bridgeUrl = getAdminBridgeUrl();
 
         bridgeUrl.hash = new URLSearchParams({
           token: authData.token,
@@ -589,7 +596,7 @@ function LoginScreen() {
 
       startTransition(() => navigate('/home', { replace: true }));
     } catch (error) {
-      window.alert(error.message || 'Login failed.');
+      window.alert(error.response?.data?.message || error.message || 'Login failed.');
     } finally {
       setSubmitting(false);
     }
