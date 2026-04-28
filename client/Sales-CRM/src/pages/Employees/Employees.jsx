@@ -146,20 +146,25 @@ const Employees = () => {
 
   const handleAdd = async (e) => {
     e.preventDefault();
+    const employeePayload = {
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      email: formData.email,
+      location: formData.location,
+      preferredLanguage: formData.preferredLanguage,
+      status: 'active'
+    };
+
+    setShowAddModal(false);
+    resetForm();
+
     try {
-      await api.post('/employees', {
-        firstName: formData.firstName,
-        lastName: formData.lastName,
-        email: formData.email,
-        location: formData.location,
-        preferredLanguage: formData.preferredLanguage,
-        status: 'active'
-      });
-      setShowAddModal(false);
-      resetForm();
+      await api.post('/employees', employeePayload);
       fetchEmployees();
     } catch (error) {
       alert(getEmployeeSaveErrorMessage(error, 'creating'));
+      setFormData(employeePayload);
+      setShowAddModal(true);
     }
   };
 
