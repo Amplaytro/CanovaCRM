@@ -47,7 +47,14 @@ app.use('/api/attendance', require('./routes/attendanceRoutes'));
 
 // Health check
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+  res.json({
+    status: 'ok',
+    timestamp: new Date().toISOString(),
+    database: {
+      host: mongoose.connection.host,
+      name: mongoose.connection.name
+    }
+  });
 });
 
 const migrateAccountCollections = async () => {

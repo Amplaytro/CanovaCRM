@@ -31,7 +31,7 @@ Frontend:
 4. Set these values before applying:
    - `CLIENT_URL=https://<your-admin-frontend-domain>,https://<your-employee-frontend-domain>`
    - `VITE_API_URL=https://<your-backend-domain>/api`
-   - your real `MONGODB_URI`
+   - your deployed MongoDB `MONGODB_URI` (for example, a MongoDB Atlas `mongodb+srv://...` URI; do not use `localhost` in production)
    - your real `JWT_SECRET`
 
 ## Vercel Frontends
